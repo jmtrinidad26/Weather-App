@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-const API_KEY = '7475ae531a2fe7e9eae3bb673af9f200';
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 const getWeatherData = (infoType, searchParams) => {
@@ -49,8 +49,8 @@ const formatCurrentWeather = (data) => {
         speed,
         details,
         icon,
-        dt: Math.floor(Date.now() / 1000),
-        timezone: timezone || null,       
+        dt: Number.isFinite(dt) ? dt : Math.floor(Date.now() / 1000),
+        timezone: timezone || null,          // may be an offset (current) or a name (onecall)
         timezoneOffset: Number.isFinite(timezone) ? timezone : null
     };
 };
