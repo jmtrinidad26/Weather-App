@@ -33,8 +33,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex justify-center items-start py-10 px-4">
-      <div className={`w-full max-w-screen-xl bg-gradient-to-br ${formatBackground()} shadow-xl shadow-gray-400 rounded-xl p-6 sm:p-8 md:p-10`}>
+ <div className={`min-h-screen bg-gradient-to-br ${formatBackground()} flex justify-center items-start py-10 px-4`}>
+
+      <div className={`w-full max-w-screen-xl bg-gradient-to-br ${formatBackground()}  shadow-gray-400 rounded-xl p-6 sm:p-8 md:p-10`}>
         <TopButtons setQuery={setQuery} />
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
         
